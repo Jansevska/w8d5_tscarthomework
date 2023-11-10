@@ -84,7 +84,7 @@ class User {
         return total;
     }
     printCart() {
-        console.log(`Here is what is in your cart, ${this.name}:`);
+        console.log(`${this.name}'s Cart:`);
         for (let item of this.cart) {
             console.log(`${item.name}: $${item.price}`);
         }
@@ -94,11 +94,11 @@ class User {
 class Shop {
     constructor(_items = []) {
         this._items = _items;
-        let itemA = new Item('Notebook', 10, 'Keep all of your notes in one handy place');
+        let itemA = new Item('Notebook', 10.99, 'White cover, spiral, 100 pages');
         this.items.push(itemA);
-        let itemB = new Item('Socket Wrench', 20, 'Tools');
+        let itemB = new Item('pens', 11.99, '6-pack pilot gel black');
         this.items.push(itemB);
-        let itemC = new Item('Blanket', 30, 'Stay warm and cozy');
+        let itemC = new Item('Post-it', 7.99, 'Small colorful post-it');
         this.items.push(itemC);
     }
     get items() {
@@ -110,7 +110,7 @@ class Shop {
 }
 // Driver Code
 let myShop = new Shop();
-let myUser = new User('Fred', 55);
+let myUser = new User('Alice', 68);
 // Add 1 itemA to the user
 myUser.addToCart(myShop.items[0]);
 myUser.printCart();
